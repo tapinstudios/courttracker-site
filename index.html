@@ -15,20 +15,56 @@
         .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
         header {
             text-align: center;
-            padding: 60px 24px 40px;
+            padding: 60px 24px 48px;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: #fff;
         }
-        header h1 { font-size: 36px; font-weight: 800; letter-spacing: -0.5px; }
-        header p { font-size: 18px; margin-top: 12px; color: #ccc; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .badge {
-            display: inline-block;
-            margin-top: 24px;
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            margin-bottom: 16px;
         }
-        .badge img { height: 50px; }
+        header h1 { font-size: 36px; font-weight: 800; letter-spacing: -0.5px; }
+        header p.tagline { font-size: 18px; margin-top: 12px; color: #ccc; max-width: 500px; margin-left: auto; margin-right: auto; }
         section { padding: 40px 0; }
-        section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; text-align: center; }
         section p { font-size: 16px; color: #444; margin-bottom: 12px; }
+
+        /* Screenshots */
+        .screenshots {
+            padding: 48px 0;
+            background: #f5f5f7;
+        }
+        .screenshots h2 { margin-bottom: 24px; }
+        .screenshot-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            overflow-x: auto;
+            padding: 0 24px 8px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .screenshot-item {
+            flex: 0 0 auto;
+            text-align: center;
+        }
+        .screenshot-item img {
+            height: 420px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        .screenshot-item p {
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            .screenshot-item img { height: 320px; }
+        }
+
+        /* Features */
         .features {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -43,6 +79,7 @@
         }
         .feature h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
         .feature p { font-size: 14px; color: #555; margin: 0; }
+
         footer {
             text-align: center;
             padding: 32px 24px;
@@ -58,8 +95,9 @@
 </head>
 <body>
     <header>
+        <img src="logo.png" alt="Court Tracker" class="logo">
         <h1>Court Tracker</h1>
-        <p>Fast, intuitive basketball stat tracking for coaches and scorekeepers.</p>
+        <p class="tagline">Fast, intuitive basketball stat tracking for coaches and scorekeepers.</p>
     </header>
 
     <div class="container">
@@ -68,8 +106,33 @@
             <p>Court Tracker makes basketball stat tracking effortless. Designed for youth coaches, recreational league scorekeepers, and anyone courtside who needs to capture every play without missing a beat.</p>
             <p>Record points, rebounds, assists, steals, blocks, turnovers, fouls, and shooting percentages in real-time. Manage substitutions, track playing time, and review detailed box scores after every game.</p>
         </section>
+    </div>
 
+    <section class="screenshots">
+        <h2>See It in Action</h2>
+        <div class="screenshot-grid">
+            <div class="screenshot-item">
+                <img src="landingpage.png" alt="Home screen">
+                <p>Home</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="liveTracking.png" alt="Live game tracking">
+                <p>Live Tracking</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="Stats1.png" alt="Game summary with MVP">
+                <p>Game Summary</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="Stats2.png" alt="Player stats and leaderboards">
+                <p>Player Stats</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
         <section>
+            <h2>Features</h2>
             <div class="features">
                 <div class="feature">
                     <h3>Real-Time Stats</h3>
